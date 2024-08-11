@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "6994b424-c6a6-4aa2-8412-1080168a72d0",
+		"name": "POIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19286801"
+	},
+	"item": [
+		{
+			"name": "Get All POIs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois"
+			},
+			"response": []
+		},
+		{
+			"name": "Get POI",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/smartTourism/api/pois/getPoi?name=Veikou Grove",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"smartTourism",
+						"api",
+						"pois",
+						"getPoi"
+					],
+					"query": [
+						{
+							"key": "_id",
+							"value": "65db73a735f6ee5a5653ccde",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "Veikou Grove"
+						},
+						{
+							"key": "address",
+							"value": "Leof. El. Venizelou 12, Nea Smyrni",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create POI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Brunello\",\r\n  \"category\": \"Restaurants\",\r\n  \"address\": \"Loukianou 21b, Athina 106 75\",\r\n  \"geoCoordinates\": {\r\n    \"type\": \"Point\",\r\n    \"coordinates\": [57.948627, 23.856803]\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create POI with Photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Brunello",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Restaurants",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Loukianou 21b, Athina 106 75",
+							"type": "text"
+						},
+						{
+							"key": "geoCoordinates",
+							"value": "{\"type\": \"Point\", \"coordinates\": [57.948627, 23.856803]}",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/C:/Users/papak/Desktop/brunello.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois/"
+			},
+			"response": []
+		},
+		{
+			"name": "Update POI",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Alsos of Nea Smyrnis\",\r\n  \"category\": \"Parks\",\r\n  \"address\": \"Leof. El. Venizelou 12, Nea Smyrni\",\r\n  \"geoCoordinates\": {\r\n    \"type\": \"Point\",\r\n    \"coordinates\": [37.948627, 23.716803]\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois/65db713af40173336007ca14"
+			},
+			"response": []
+		},
+		{
+			"name": "Update POI with Photo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Alsos of Nea Smyrnis",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Parks",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Leof. El. Venizelou 12, Nea Smyrni",
+							"type": "text"
+						},
+						{
+							"key": "geoCoordinates",
+							"value": "{\"type\": \"Point\", \"coordinates\": [38.029599, 23.766345]}",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "/D:/Panos/ΠΜΣ - ΠΡΟΗΓΜΕΝΑ ΣΥΣΤΗΜΑΤΑ/ΜΑΘΗΜΑΤΑ/JavaScript/smart-tourism-app/public/img/pois/alsos-neas-smyrnis.jpg"
+						}
+					]
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois/65db713af40173336007ca14"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete POI",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/smartTourism/api/pois/65e4b62e43a8e3154c3530cc"
+			},
+			"response": []
+		}
+	]
+}
